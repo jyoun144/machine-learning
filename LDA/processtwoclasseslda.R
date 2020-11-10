@@ -51,7 +51,7 @@ processtwoclasseslda <- function()
   
   # Print out info about calcuations
   cat("Category 1 data (x1):\n", x1[1,], "\n", x1[2,], "\n", x1[3,], "\n", x1[4,], "\n", x1[5,], "\n")
-  cat("Category 2 data (x1):\n", x2[1,], "\n", x2[2,], "\n", x2[3,], "\n", x2[4,], "\n", x2[5,], "\n")
+  cat("Category 2 data (x2):\n", x2[1,], "\n", x2[2,], "\n", x2[3,], "\n", x2[4,], "\n", x2[5,], "\n")
   cat("Expected covariance matrix for s1: \n", cov(x1)[1,], "\n", cov(x1)[2,], "\n")
   cat("Calculated covariance matrix for s1: \n", s1[1,], "\n", s1[2,], "\n")
   cat("Expected covariance matrix for s2: \n", cov(x2)[1,], "\n", cov(x2)[2,], "\n")
