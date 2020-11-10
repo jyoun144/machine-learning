@@ -105,7 +105,7 @@ processthreeclasseslda2 <- function()
  ldaprojection <- eigen(solve(sw)%*%sb)
  eigenvals <- ldaprojection$values
  eigenvectors <- ldaprojection$vectors
- par(mfrow=c(3,1),mar=c(4,6,4,6))
+ par(mfrow=c(3,1),mar=c(4,8,4,8))
  
  # Visualize results
 
