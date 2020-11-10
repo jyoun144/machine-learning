@@ -105,7 +105,7 @@ processthreeclasseslda2 <- function()
  ldaprojection <- eigen(solve(sw)%*%sb)
  eigenvals <- ldaprojection$values
  eigenvectors <- ldaprojection$vectors
- par(mfrow=c(2,2),mar=c(4,2,2,2))
+ par(mfrow=c(2,2),mar=c(4,4,2,2))
  
  # Visualize results
 
@@ -127,7 +127,7 @@ processthreeclasseslda2 <- function()
  y1 <- mvtnorm::dmvnorm(c1,mean1,s1)
  plot(c1 %*% eigenvectors[,1],y1, xlim=c(-5, 25), ylim=c(0, .08), col="red", 
       xlab = "projected values", ylab = "",
-      main="Multivariate Normal PDF for Eigenvector 1")
+      main="Multivariate Normal PDF for Eigenvector 1", cex.main=0.9)
  legend("topright", legend=c("c1", "c2", "c3"), pch=1, col=c("red","darkgreen", "darkblue"))
  
  y2 <- mvtnorm::dmvnorm(c2,mean2,s2)
@@ -139,7 +139,7 @@ processthreeclasseslda2 <- function()
  y1 <- mvtnorm::dmvnorm(c1,mean1,s1)
  plot(c1 %*% eigenvectors[,2],y1, xlim=c(-5, 25), ylim=c(0, .08), col="red",
       xlab = "projected values", ylab = "",
-      main="Multivariate Normal PDF for Eigenvector 2")
+      main="Multivariate Normal PDF for Eigenvector 2", cex.main=0.9)
  legend("topright", legend=c("c1", "c2", "c3"), pch=1, col=c("red","darkgreen", "darkblue"))
  
  y2 <- mvtnorm::dmvnorm(c2,mean2,s2)
