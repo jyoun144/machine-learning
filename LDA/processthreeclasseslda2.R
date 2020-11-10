@@ -121,8 +121,8 @@ processthreeclasseslda2 <- function()
  points(mu2[1], mu2[2], pch=19, cex=1.5, col="red")
  points(mu3[1], mu3[2], pch=19, cex=1.5, col="yellow")
  legend("topright", legend=c("c1", "c2", "c3"), pch=1, col=c("red","darkgreen", "darkblue"))
- text(18,4, "eigenvector 1", cex=0.9, col="black")
- text(-9,4, "eigenvector 2", cex=0.9, col="red")
+ text(18,4, "eigenvector 1", cex=0.6, col="black")
+ text(-9,4, "eigenvector 2", cex=0.6, col="red")
  
  y1 <- mvtnorm::dmvnorm(c1,mean1,s1)
  plot(c1 %*% eigenvectors[,1],y1, xlim=c(-5, 25), ylim=c(0, .08), col="red", 
