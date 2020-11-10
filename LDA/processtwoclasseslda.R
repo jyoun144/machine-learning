@@ -1,3 +1,16 @@
+'***********************************
+Author:  Jack Young, November 2020 *
+************************************
+The following R code is based upon MATLAB code created by Shireen Elhabian and Aly A. Farag,
+"A Tutorial on Data Reduction:  Linear Discriminant  Analysis (LDA)," University of Louisville, 
+CVIP Lab, September 2009, http://www.sci.utah.edu/~shireen/pdfs/tutorials/Elhabian_LDA09.pdf 
+***********************************'
+# Example usage:
+# l <- processtwoclasseslda()
+# Projecting points onto eigenvector
+# y1_w1 <- as.vector(l$x1 %*% l$eigenvectors[,1]); y1_w1
+# y2_w1 <- as.vector(l$x2 %*% l$eigenvectors[,1]); y2_w1
+
 processtwoclasseslda <- function()
 {
   # Create dataset for class 1
@@ -29,10 +42,11 @@ processtwoclasseslda <- function()
   eigenvectors <- ldaprojection$vectors
   
   # Visual two-class data with LDA projection line for eigenvector #1
-  plot(x1[,1], x1[,2], xlim=c(0,10), ylim=c(0,10), col=c("red"))
+  plot(x1[,1], x1[,2], xlim=c(0,10), ylim=c(0,10), col=c("red"),
+       xlab="first feature", ylab="second feature", main=paste0("Linear Discriminant  Analysis (LDA):\n", "Two Classes"))
   points(x2[,1], x2[,2], col=c("blue"))
-  abline(0, eigenvectors[2,1]/eigenvectors[1,1], col="green")
-  text(8,2, "LDA projection line for \n eigenvector 1", cex=0.8)
+  abline(0, eigenvectors[2,1]/eigenvectors[1,1], col="black", lwd=3)
+  text(8,2, "LDA projection line for \n eigenvector 1", cex=0.8, col="red")
   legend("topleft", legend=c("x1", "x2"), pch=1, col=c("red","blue"))
   
   # Print out info about calcuations
