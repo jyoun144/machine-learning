@@ -110,6 +110,7 @@ processthreeclasseslda <- function()
  plot(c1, xlim=c(-15,25), ylim=c(-10,25), col="red", axes = FALSE, panel.first = grid(), 
       xlab="first feature", ylab="second feature", main=paste0("Linear Discriminant  Analysis (LDA):\n", "Three Classes"))
  abline(0, eigenvectors[2,1]/eigenvectors[1,1], col="black", lwd=3)
+ abline(0, eigenvectors[2,2]/eigenvectors[1,2], col="red", lwd=3)
  axis(side = 1, at = seq(-15, 25,5))
  axis(side = 2, at = seq(-10, 25,5))
  points(c2, col="darkgreen")
@@ -118,7 +119,8 @@ processthreeclasseslda <- function()
  points(mu2[1], mu2[2], pch=19, cex=1.5, col="red")
  points(mu3[1], mu3[2], pch=19, cex=1.5, col="yellow")
  legend("topleft", legend=c("c1", "c2", "c3"), pch=1, col=c("red","darkgreen", "darkblue"))
- text(18,4, "LDA projection line for \n eigenvector 1", cex=0.8, col="red")
+ text(18,4, "LDA projection line for \n eigenvector 1", cex=0.8, col="black")
+ text(-8,4, "LDA projection line for \n eigenvector 2", cex=0.8, col="red")
  
  return(list(eigenvectors=eigenvectors,c1=c1,c2=c2,c3=c3))
 }
